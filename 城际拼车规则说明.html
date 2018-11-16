@@ -1,0 +1,800 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>城际拼车规则说明</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/城际拼车规则说明/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/ie.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="files/城际拼车规则说明/data.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (矩形) -->
+      <div id="u0" class="ax_default _二级标题">
+        <div id="u0_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u1" class="text" style="visibility: visible;">
+          <p><span>成单规则</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u2" class="ax_default label">
+        <div id="u2_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u3" class="text" style="visibility: visible;">
+          <p><span>1. 订单在同一个时间段且起止城市相同的才能成单（下车点不一样也可以成单，只要终点城市一样即可）</span></p><p><span>2. 订单满足起止城市和预约时间相同的情况下，先下单的先拼成（下单时间相同的情况下，订单编号偏小的优先拼-前提是订单编号是系统自增长）</span></p><p><span>3. 订单包含人数，4个人才能拼成（系统分配）</span></p><p><span>4. 一旦拼成，则立刻指定司机</span></p><p><span>5. 每个时间段时长为1个小时，服务端预留口子，可进行配置</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u4" class="ax_default _二级标题">
+        <div id="u4_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u5" class="text" style="visibility: visible;">
+          <p><span>乘客下单规则</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u6" class="ax_default label">
+        <div id="u6_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u7" class="text" style="visibility: visible;">
+          <p><span>1.同一个账号，在同一天同一个线路只能下一个订单</span></p><p><span>2. 乘客1个订单可以包含1-4个人</span></p><p><span>3. 乘客必须先支付才能进入派单系统，否则下单后30分钟内自动关闭。支付成功的订单才会进入订单池</span></p><p><span>4. 乘客新建订单和修改订单都只能选择当前时间段的下一个时间段（如当前时间为14:25，则处于14:00-14:59的时间段，则只能选择15:00-15:59及之后的时间段）</span></p><p><span style="color:#FF0000;">5. 乘客叫单允许的时间段与当前时间段对应的班次表有无当班司机有关，哪怕当前班次时间表的司机已被派完，乘客依然可以选择此时间段（司机被派完后，</span></p><p><span style="color:#FF0000;">系统自动为当前时间段成单的行程分配下一个班次时间表的司机，司机班次时间不变，但是出发时间以乘客预约时间为准）</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u8" class="ax_default _三级标题">
+        <div id="u8_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u9" class="text" style="visibility: visible;">
+          <p><span>订单A</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (水平线) -->
+      <div id="u10" class="ax_default line">
+        <img id="u10_img" class="img " src="images/城际拼车规则说明/u10.png"/>
+        <!-- Unnamed () -->
+        <div id="u11" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u12" class="ax_default label">
+        <div id="u12_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u13" class="text" style="visibility: visible;">
+          <p><span>文山至昆明机场&nbsp;&nbsp; 预约时间：今天14:00 -15：00&nbsp; &nbsp;&nbsp; 2人&nbsp; &nbsp;&nbsp; 下单时间：今天09: 25:14&nbsp; &nbsp;&nbsp; 订单编号001</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (水平线) -->
+      <div id="u14" class="ax_default line">
+        <img id="u14_img" class="img " src="images/城际拼车规则说明/u10.png"/>
+        <!-- Unnamed () -->
+        <div id="u15" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u16" class="ax_default label">
+        <div id="u16_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u17" class="text" style="visibility: visible;">
+          <p><span>文山至昆明机场&nbsp;&nbsp; 预约时间：今天14:00 -15：00&nbsp; &nbsp; 1人&nbsp; &nbsp;&nbsp; 下单时间：今天09: 27:14&nbsp; &nbsp;&nbsp; 订单编号002</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u18" class="ax_default _三级标题">
+        <div id="u18_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u19" class="text" style="visibility: visible;">
+          <p><span>订单B</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (水平线) -->
+      <div id="u20" class="ax_default line">
+        <img id="u20_img" class="img " src="images/城际拼车规则说明/u10.png"/>
+        <!-- Unnamed () -->
+        <div id="u21" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u22" class="ax_default label">
+        <div id="u22_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u23" class="text" style="visibility: visible;">
+          <p><span>文山至昆明市区&nbsp;&nbsp; 预约时间：今天14:00 -15：00&nbsp; &nbsp; 1人&nbsp; &nbsp;&nbsp; 下单时间：今天09: 57:14&nbsp; &nbsp; &nbsp; 订单编号003</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u24" class="ax_default _三级标题">
+        <div id="u24_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u25" class="text" style="visibility: visible;">
+          <p><span>订单C</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (水平线) -->
+      <div id="u26" class="ax_default line">
+        <img id="u26_img" class="img " src="images/城际拼车规则说明/u10.png"/>
+        <!-- Unnamed () -->
+        <div id="u27" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u28" class="ax_default label">
+        <div id="u28_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u29" class="text" style="visibility: visible;">
+          <p><span>文山至昆明机场&nbsp;&nbsp; 预约时间：今天14:00 -15：00&nbsp; &nbsp; 1人&nbsp; &nbsp; 下单时间：今天09: 57:24&nbsp; &nbsp; &nbsp;&nbsp; 订单编号004</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u30" class="ax_default _三级标题">
+        <div id="u30_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u31" class="text" style="visibility: visible;">
+          <p><span>订单D</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u32" class="ax_default box_1">
+        <div id="u32_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u33" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u34" class="ax_default _三级标题">
+        <div id="u34_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u35" class="text" style="visibility: visible;">
+          <p><span>行程a先拼成</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u36" class="ax_default _三级标题">
+        <div id="u36_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u37" class="text" style="visibility: visible;">
+          <p><span>订单A+订单B+订单C</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u38" class="ax_default _三级标题">
+        <div id="u38_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u39" class="text" style="visibility: visible;">
+          <p><span>----系统派单</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u40" class="ax_default label">
+        <div id="u40_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u41" class="text" style="visibility: visible;">
+          <p><span>订单ABC的乘客订单状态变更为拼车成功，待出发</span></p><p><span>该行程分配给司机，司机端订单状态为待出发</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u42" class="ax_default label">
+        <div id="u42_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u43" class="text" style="visibility: visible;">
+          <p><span>1.&nbsp; 手动派单只能撮合起止城市相同的订单，</span><span style="color:#FF0000;">时间段可不受限制</span></p><p><span>2.&nbsp; 当订单状态为行程中和等待接驾，不可再给他分派新订单</span></p><p><span>3.&nbsp; 拼车成功（状态为待出发）的订单，平台可以主动解除其与当前司机的分配关系，重新分派给新的司机（不可分配给无司机）</span></p><p><span>4. 手动派单不受班次表限制</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u44" class="ax_default _三级标题">
+        <div id="u44_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u45" class="text" style="visibility: visible;">
+          <p><span>----手动派单</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u46" class="ax_default label">
+        <div id="u46_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u47" class="text" style="visibility: visible;">
+          <p style="font-size:14px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">5. 行程状态为拼车成功，待出发，但是其中有订单取消：</span></p><p style="font-size:14px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">&nbsp;&nbsp; &nbsp; 5.1 乘客无责取消：则系统从订单池中自动给该行程添加合适的新订单（规则同上：同一时间段，同一起止城市）。</span></p><p style="font-size:14px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;color:#FF0000;">&nbsp;&nbsp; &nbsp; 补充说明：一个行程只能有4个乘客，补进来的订单包含的乘客数必须与此行程缺少的乘客数一致</span></p><p style="font-size:14px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;color:#FF0000;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 系统不可以将已在拼车成功的其他行程中拆分订单，加入此行程</span></p><p style="font-size:14px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;"><br></span></p><p style="font-size:14px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">&nbsp;&nbsp; &nbsp; 5.2 乘客有责取消：不再给该行程加入新订单，司机可以按照约定时间出发</span></p><p style="font-size:14px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;"><br></span></p><p style="font-size:16px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;font-size:14px;">6. </span><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;">派单顺序跟司机排班表相关</span></p><p style="font-size:18px;"><span style="font-family:'Arial Negreta', 'Arial Normal', 'Arial';font-weight:700;"><br></span></p><p style="font-size:14px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;">&nbsp;&nbsp; &nbsp; 6.1 乘客可选时间段与司机排班表一致。取最早/最晚有司机的班次为乘客可选最早/最晚出发班次（第一期平台可以自动生成每个小时一个班次）</span></p><p style="font-size:14px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;color:#FF0000;">&nbsp;&nbsp; &nbsp;&nbsp; 如司机排班表从 15:00-15:59开始，17:00-17:59结束，则乘客端只能看到和选择15:00-15:59， 16:00-16:59,17:00-17:59这</span></p><p style="font-size:14px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;color:#FF0000;">三个时间段，极端情况下当前乘客在17:01选择叫单，则没有可用车辆（下一时间段无班次）</span></p><p style="font-size:14px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;color:#FF0000;"><br></span></p><p style="font-size:14px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;color:#FF0000;">&nbsp;&nbsp; &nbsp; 6.2 乘客预约出发时间与排班表时间匹配，进行分配司机，同一个排班时间，按照司机排班编号从小到大分派（号越小，出车顺序越靠前）</span></p><p style="font-size:14px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;color:#FF0000;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 同一时间段先拼成先派单</span></p><p style="font-size:14px;"><span style="font-family:'Arial Normal', 'Arial';font-weight:400;color:#FF0000;">&nbsp;&nbsp; &nbsp; </span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u48" class="ax_default _二级标题">
+        <div id="u48_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u49" class="text" style="visibility: visible;">
+          <p><span>取消规则</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u50" class="ax_default _三级标题">
+        <div id="u50_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u51" class="text" style="visibility: visible;">
+          <p><span>----乘客无责取消</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u52" class="ax_default _三级标题">
+        <div id="u52_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u53" class="text" style="visibility: visible;">
+          <p><span>----乘客有责取消</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u54" class="ax_default label">
+        <div id="u54_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u55" class="text" style="visibility: visible;">
+          <p><span>1.&nbsp; 乘客在预约行程最晚出发时间（14:00-15:00，最晚出发时间为15:00）前一小时之前&nbsp; 且 订单状态为拼车成功</span></p><p><span>2.&nbsp; 订单状态为拼车中，可随时取消</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u56" class="ax_default label">
+        <div id="u56_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u57" class="text" style="visibility: visible;">
+          <p><span>1.&nbsp; 乘客在预约行程最早出发时间（14:00-15:00，最早出发时间为14:00）后</span></p><p><span>2.&nbsp; 订单状态为等待接驾，乘客取消后，不会主动退款。 （状态为行程中和已完成，乘客端无取消订单入口）</span></p><p><span>&nbsp;&nbsp; &nbsp; </span><span style="color:#FF0000;">补充说明：后续是否退款由平台决定</span></p><p><span><br></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u58" class="ax_default box_1">
+        <div id="u58_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u59" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (水平线) -->
+      <div id="u60" class="ax_default line">
+        <img id="u60_img" class="img " src="images/城际拼车规则说明/u10.png"/>
+        <!-- Unnamed () -->
+        <div id="u61" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u62" class="ax_default label">
+        <div id="u62_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u63" class="text" style="visibility: visible;">
+          <p><span>文山至昆明机场&nbsp;&nbsp; 预约时间：今天14:00 -15：00&nbsp; &nbsp; 2人&nbsp; &nbsp; 下单时间：今天10: 57:24&nbsp; &nbsp; &nbsp;&nbsp; 订单编号005</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u64" class="ax_default _三级标题">
+        <div id="u64_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u65" class="text" style="visibility: visible;">
+          <p><span>订单E</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u66" class="ax_default _三级标题">
+        <div id="u66_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u67" class="text" style="visibility: visible;">
+          <p><span>5.1 行程a拼成，订单B取消，系统自动补单</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u68" class="ax_default _三级标题">
+        <div id="u68_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u69" class="text" style="visibility: visible;">
+          <p><span>订单A+订单C+订单D</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u70" class="ax_default _三级标题">
+        <div id="u70_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u71" class="text" style="visibility: visible;">
+          <p><span>5.1 行程a拼成，订单B和C取消</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u72" class="ax_default box_1">
+        <div id="u72_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u73" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u74" class="ax_default _三级标题">
+        <div id="u74_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u75" class="text" style="visibility: visible;">
+          <p><span>订单A+订单E</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u76" class="ax_default _三级标题">
+        <div id="u76_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u77" class="text" style="visibility: visible;">
+          <p><span>5.2 行程a拼成，订单B有责取消，系统不补单</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u78" class="ax_default _二级标题">
+        <div id="u78_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u79" class="text" style="visibility: visible;">
+          <p><span>退款规则</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u80" class="ax_default _三级标题">
+        <div id="u80_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u81" class="text" style="visibility: visible;">
+          <p><span>----系统自动退款</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u82" class="ax_default label">
+        <div id="u82_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u83" class="text" style="visibility: visible;">
+          <p><span>1.&nbsp; 乘客在无责取消的时候，系统自动进行退款</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u84" class="ax_default _三级标题">
+        <div id="u84_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u85" class="text" style="visibility: visible;">
+          <p><span>----平台手动退款</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u86" class="ax_default label">
+        <div id="u86_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u87" class="text" style="visibility: visible;">
+          <p><span>1.&nbsp; 在订单状态为等待接驾，行程中，已完成，已取消-有责的订单，平台均可进行退款，是否退款由平台决定</span></p><p><span>&nbsp;&nbsp;&nbsp; </span><span style="color:#FF0000;">补充说明：无责取消的订单，不可再次进行退款</span></p><p><span style="color:#FF0000;"><br></span></p><p><span style="color:#FF0000;">2. 平台退款不影响订单状态。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u88" class="ax_default _二级标题">
+        <div id="u88_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u89" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u90" class="ax_default box_1">
+        <div id="u90_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u91" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u92" class="ax_default _三级标题">
+        <div id="u92_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u93" class="text" style="visibility: visible;">
+          <p><span>订单A+订单B+订单C</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u94" class="ax_default _二级标题">
+        <div id="u94_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u95" class="text" style="visibility: visible;">
+          <p><span>几种极端情况</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u96" class="ax_default label">
+        <div id="u96_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u97" class="text" style="visibility: visible;">
+          <p><span>1.&nbsp; 行程b 有张三，李四，王五，赵六，这4个乘客，每个乘客一个订单，预约时间为15:00，行程已拼成。 司机小黄13:50去接乘客，但是没有点去接乘客，13:55接到了张三，13:59接到了李四，13:59:22赵六取消了</span></p><p><span>订单。此时，14:00以后了，张三李四已上车，赵六无责取消，王五没上车，那么张三李四王五无法无责取消订单。</span></p><p><span>解决方案是：1. 这三个人和司机协商好，出发了（线下）</span></p><p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2. 这三个人继续等，等到无人可拼也不想等了，只能选择有责取消，并且给平台申诉/投诉，平台决定是否退款（线上）</span></p><p><span><br></span></p><p><span>2. 行程c有张三，李四，王五，赵六，这4个乘客，每个乘客一个订单，预约时间为15:00，行程已拼成。 司机小黄13:00去接乘客，并且点了去接乘客，此时所有人都不能无责取消。司机要求在约定时间前出发，但是</span></p><p><span>有张三，李四不同意，有责取消，并且给平台申诉/投诉，平台决定是否退款（线上）。平台有个参考（司机点击去接乘客的时间）：司机提前出发，司机的责任</span></p><p><span><br></span></p><p><span><br></span></p><p><span>2. 行程c有张三，李四，王五，赵六，这4个乘客，每个乘客一个订单，预约时间为15:00，行程已拼成。 司机小黄14:00去接乘客，并且点了去接乘客，此时所有人都不能无责取消。张三投诉给平台说没上车，但是</span></p><p><span>行程正在进行中，平台可以核实，决定是否退款</span></p><p><span><br></span></p><p><span><br></span></p><p><span><br></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (水平线) -->
+      <div id="u98" class="ax_default line">
+        <img id="u98_img" class="img " src="images/城际拼车规则说明/u10.png"/>
+        <!-- Unnamed () -->
+        <div id="u99" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u100" class="ax_default label">
+        <div id="u100_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u101" class="text" style="visibility: visible;">
+          <p><span>文山至昆明机场&nbsp;&nbsp; 预约时间：今天15:00 -16：00&nbsp; &nbsp; 3人&nbsp; &nbsp; 下单时间：今天11: 57:24&nbsp; &nbsp; &nbsp;&nbsp; 订单编号006</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u102" class="ax_default _三级标题">
+        <div id="u102_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u103" class="text" style="visibility: visible;">
+          <p><span>订单F</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u104" class="ax_default _三级标题">
+        <div id="u104_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u105" class="text" style="visibility: visible;">
+          <p><span>行程a拼成，订单A和B无责取消，手动补单</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u106" class="ax_default box_1">
+        <div id="u106_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u107" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u108" class="ax_default _三级标题">
+        <div id="u108_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u109" class="text" style="visibility: visible;">
+          <p><span>订单C+订单E</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u110" class="ax_default _三级标题">
+        <div id="u110_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u111" class="text" style="visibility: visible;">
+          <p><span>----司机没有取消权</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u112" class="ax_default _图片">
+        <img id="u112_img" class="img " src="images/城际拼车规则说明/u112.png"/>
+        <!-- Unnamed () -->
+        <div id="u113" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (椭圆形) -->
+      <div id="u114" class="ax_default ellipse">
+        <img id="u114_img" class="img " src="images/城际拼车规则说明/u114.png"/>
+        <!-- Unnamed () -->
+        <div id="u115" class="text" style="visibility: visible;">
+          <p><span>1</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u116" class="ax_default _图片">
+        <img id="u116_img" class="img " src="images/城际拼车规则说明/u112.png"/>
+        <!-- Unnamed () -->
+        <div id="u117" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (椭圆形) -->
+      <div id="u118" class="ax_default ellipse">
+        <img id="u118_img" class="img " src="images/城际拼车规则说明/u114.png"/>
+        <!-- Unnamed () -->
+        <div id="u119" class="text" style="visibility: visible;">
+          <p><span>2</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u120" class="ax_default box_1">
+        <div id="u120_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u121" class="text" style="visibility: visible;">
+          <p><span>15:00-15:59</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u122" class="ax_default box_1">
+        <div id="u122_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u123" class="text" style="visibility: visible;">
+          <p><span>16:00-16:59</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u124" class="ax_default _图片">
+        <img id="u124_img" class="img " src="images/城际拼车规则说明/u112.png"/>
+        <!-- Unnamed () -->
+        <div id="u125" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (椭圆形) -->
+      <div id="u126" class="ax_default ellipse">
+        <img id="u126_img" class="img " src="images/城际拼车规则说明/u114.png"/>
+        <!-- Unnamed () -->
+        <div id="u127" class="text" style="visibility: visible;">
+          <p><span>3</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u128" class="ax_default _图片">
+        <img id="u128_img" class="img " src="images/城际拼车规则说明/u112.png"/>
+        <!-- Unnamed () -->
+        <div id="u129" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (椭圆形) -->
+      <div id="u130" class="ax_default ellipse">
+        <img id="u130_img" class="img " src="images/城际拼车规则说明/u114.png"/>
+        <!-- Unnamed () -->
+        <div id="u131" class="text" style="visibility: visible;">
+          <p><span>4</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (连接线) -->
+      <div id="u132" class="ax_default _连接线">
+        <img id="u132_seg0" class="img " src="images/城际拼车规则说明/u132_seg0.png" alt="u132_seg0"/>
+        <img id="u132_seg1" class="img " src="images/城际拼车规则说明/u132_seg1.png" alt="u132_seg1"/>
+        <img id="u132_seg2" class="img " src="images/城际拼车规则说明/u132_seg2.png" alt="u132_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u133" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (连接线) -->
+      <div id="u134" class="ax_default _连接线">
+        <img id="u134_seg0" class="img " src="images/城际拼车规则说明/u134_seg0.png" alt="u134_seg0"/>
+        <img id="u134_seg1" class="img " src="images/城际拼车规则说明/u134_seg1.png" alt="u134_seg1"/>
+        <img id="u134_seg2" class="img " src="images/城际拼车规则说明/u134_seg2.png" alt="u134_seg2"/>
+        <!-- Unnamed () -->
+        <div id="u135" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u136" class="ax_default _三级标题">
+        <div id="u136_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u137" class="text" style="visibility: visible;">
+          <p><span>行程b后拼成</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u138" class="ax_default box_1">
+        <div id="u138_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u139" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u140" class="ax_default _三级标题">
+        <div id="u140_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u141" class="text" style="visibility: visible;">
+          <p><span>订单D+订单F</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u142" class="ax_default _三级标题">
+        <div id="u142_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u143" class="text" style="visibility: visible;">
+          <p><span>行程a</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u144" class="ax_default label">
+        <div id="u144_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u145" class="text" style="visibility: visible;">
+          <p><span style="color:#FF0000;">问题：班次表会导致以下问题发生</span></p><p><span>&nbsp;&nbsp; 1 A-B点和B-A点都只排了上午的班次，即使有从B-A点的返程车辆，此时无班次，下午两边都无可用车辆</span></p><p><span><br></span></p><p><span>&nbsp;&nbsp; 2 按照排班表，3号车从B-A点返程，下午出发时间为13:00，4号车从B-A点返程，下午出发时间为14:00.但是到了13:00，只有4号车到达A点，3号车还在路上。此时4号车依然无法出发</span></p><p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 3号车后到达，4号车先到达，先派给谁？（按照班次先后进行排班，不以到达时间为准）</span></p><p><span><br></span></p><p><span style="color:#FF0000;">&nbsp;&nbsp; 3. 按照排班表，时间段09:00-09:59有10辆车，时间段10:00-10:59有10辆车，时间段11:00-11:59有10辆车</span></p><p><span style="color:#FF0000;">&nbsp;&nbsp;&nbsp; 但是时间段09:00-09:59 只有8个行程，时间段10:00-10:59有12个行程，则09:00-09:59最后两辆车无法出发，时间段10:00-10:59的10辆车全部派完，同时，时间段11:00-11:59前面</span></p><p><span style="color:#FF0000;">两辆车也被分配了时间段10:00-10:59的两个行程</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u146" class="ax_default _二级标题">
+        <div id="u146_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u147" class="text" style="visibility: visible;">
+          <p><span>供应商与运营商</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u148" class="ax_default _三级标题">
+        <div id="u148_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u149" class="text" style="visibility: visible;">
+          <p><span>----班次表</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u150" class="ax_default label">
+        <div id="u150_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u151" class="text" style="visibility: visible;">
+          <p><span>1.&nbsp; 超管平台可以添加业务经营范围与线路范围一致（起点城市和终点城市完全一样）的供应商下的司机进入班次表（不管此供应商是否挂靠了对应的运营商）</span></p><p><span>2. 运营商只能添加与他有城际拼车业务关联下的司机进入班次表，如果没有关联的供应商，则司机列表为空</span></p><p><span>3. 该路线有运营商，但是运营商下没有供应商，也没有班次表的时候：乘客端可以看到路线，但是无法选择出发时间</span></p><p><span>4. 该路线有运营商，之前运营商与供应商有城际拼车业务关联，且创建了对应的班次表。当合作时间到了或者解除了业务合作关系，只要运营商不删除班次表，此时</span></p><p><span>乘客可以看到路线，也可以选择出发时间。运营商可以看到订单，但是无法看到城际业务下的车辆和司机信息了</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u152" class="ax_default _三级标题">
+        <div id="u152_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u153" class="text" style="visibility: visible;">
+          <p><span>----派单</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u154" class="ax_default _三级标题">
+        <div id="u154_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u155" class="text" style="visibility: visible;">
+          <p><span>----数据关联</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u156" class="ax_default label">
+        <div id="u156_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u157" class="text" style="visibility: visible;">
+          <p><span>1.&nbsp; 乘客呼叫订单的时候，订单是标识给运营商的，但是派单是派给供应商的司机</span></p><p><span>2. 该路线有运营商，但是运营商下没有供应商，也没有班次表的时候：乘客端可以看到路线，但是无法选择出发时间。此时不做派单</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u158" class="ax_default _文本段落">
+        <div id="u158_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u159" class="text" style="visibility: visible;">
+          <p><span>1.路线A有运营商，之前运营商与供应商有城际拼车业务关联，且创建了对应的班次表。当合作时间到了或者解除了业务合作关系，只要运营商不删除班次表，此时</span></p><p><span>乘客可以看到路线，也可以选择出发时间。运营商可以看到订单，但是无法看到城际业务下的车辆和司机信息了</span></p><p><span><br></span></p><p><span>2. 运营商和供应商有业务关联的时候，运营商可以看到关联的供应商数据，但是本身与派单无关。</span></p><p><span style="color:#FF0000;">3. 特殊极端情况：</span></p><p><span>&nbsp;&nbsp;&nbsp; 线路：成都市青羊区-昆明市机场</span></p><p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 供应商A：经营区域：成都市青羊区-昆明市机场&nbsp; 挂靠给运营商B&nbsp; </span></p><p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 运营商B：经营区域：四川省-云南省</span></p><p><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 运营商C：经营区域：成都市青羊区-昆明市机场&nbsp; </span></p><p><span><br></span></p><p><span>结果：</span><span style="color:#FF0000;">运营商B可以管理班次表，订单指派给了供应商A，但是标识打给了运营商C（运营商B可以看到车辆，司机数据，运营商C只能看到订单数据）</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u160" class="ax_default _图片">
+        <img id="u160_img" class="img " src="images/城际拼车规则说明/u160.png"/>
+        <!-- Unnamed () -->
+        <div id="u161" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (连接线) -->
+      <div id="u162" class="ax_default _连接线">
+        <img id="u162_seg0" class="img " src="images/城际拼车规则说明/u162_seg0.png" alt="u162_seg0"/>
+        <img id="u162_seg1" class="img " src="images/城际拼车规则说明/u162_seg1.png" alt="u162_seg1"/>
+        <img id="u162_seg2" class="img " src="images/城际拼车规则说明/u162_seg2.png" alt="u162_seg2"/>
+        <img id="u162_seg3" class="img " src="images/城际拼车规则说明/u162_seg3.png" alt="u162_seg3"/>
+        <!-- Unnamed () -->
+        <div id="u163" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
